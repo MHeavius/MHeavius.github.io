@@ -150,7 +150,7 @@ h1 {
 
 .adress::before,
 .worktime::before {
-    content: url(../img/icon-marker.png);
+    content: '';
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,10 +160,13 @@ h1 {
     width: 40px;
     border-radius: 50%;
     background-color: var(--green);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/icon-marker.png);
 }
 
 .worktime::before {
-    content: url(../img/icon-mobile.png);
+    background-image: url(../img/icon-mobile.png);
 }
 
 .nav-list {
@@ -177,7 +180,7 @@ h1 {
 }
 
 .header-phone a::before {
-    content: url(../img/icon-phone.png);
+    content: '';
     margin-right: 8px;
     display: flex;
     justify-content: center;
@@ -186,6 +189,9 @@ h1 {
     height: 30px;
     border-radius: 50%;
     background-color: var(--green_dark);
+    background-image: url(../img/icon-phone.png);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 main {
@@ -512,6 +518,7 @@ main {
     margin-top: 35px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .card-amount {
@@ -525,29 +532,21 @@ main {
 }
 
 .card-price {
-    color: #fff;
-    position: relative;
-    z-index: 1;
-    font-size: 18px;
-}
-
-.card-price::after {
-    content: ' р.'
-}
-
-.card-price::before {
-    content: '';
+    display: inline-block;
     position: absolute;
-    display: block;
     top: 50%;
-    z-index: -1;
     right: -30px;
-    height: 40px;
-    width: calc(100% + 40px);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
     background-color: #f1cc7e;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     transform: translateY(-50%);
+    z-index: 1;
+    font-size: 18px;
+    color: #fff;
 }
 
 .card-body .btn {
@@ -656,6 +655,10 @@ main {
         margin-left: 20px;
         width: 40px;
         height: 40px;
+    }
+    .header-phone .btn {
+        height: 100%;
+        width: 100%;
     }
     .header-phone a::before {
         background-color: transparent;
@@ -768,7 +771,7 @@ main {
     .nav-menu-item::before {
         display: none;
     }
-    .goods .section-header-link{
+    .goods .section-header-link {
         margin-left: auto;
     }
     .selection-list-item a {
@@ -829,15 +832,15 @@ main {
     .footer .nav-menu-item::before {
         display: flex;
     }
-    .goods .section-header{
+    .goods .section-header {
         text-align: center;
     }
-    .goods .section-header-title{
+    .goods .section-header-title {
         font-size: 25px;
         margin-right: 0;
         margin-bottom: 40px;
     }
-    .goods .section-header-link{
+    .goods .section-header-link {
         margin-left: 0;
     }
 }
@@ -852,10 +855,44 @@ main {
     .selection-list-item {
         width: 100%;
     }
-    .footer-title{
+    .footer-title {
         border-bottom: none;
     }
-    .footer-title span::after{
+    .footer-title span::after {
         display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .card-body{
+        padding-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+    }
+    .card-body-img{
+        margin-bottom: 20px;
+    }
+    .card-body-img img {
+        width: 100%;
+    }
+    .card-body-info {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 15px;
+    }
+    .card-amount {
+        margin-bottom: 10px;
+    }
+    .card-price {
+        position: static;
+        display: block;
+        transform: none;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .card-body .btn{
+        margin-top: 15px;
     }
 }
