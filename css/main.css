@@ -280,6 +280,23 @@ main {
     align-items: center;
     border-radius: 50%;
     margin-right: 15px;
+    position: relative;
+}
+
+.slide-header-discount::after {
+    content: '%';
+    display: block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    color: var(--red);
+    background-color: var(--gold);
+    font-size: 16px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: -6px;
 }
 
 .slide-body-text {
@@ -440,21 +457,41 @@ main {
     background-color: #f4f4f4;
 }
 
+.section:nth-of-type(even) {
+    background-color: transparent;
+}
+
 .section-header {
     margin-bottom: 25px;
 }
 
-.goods .section-header-title {
-    text-transform: uppercase;
+.goods .section-title {
     margin-right: 15px;
 }
 
-.section-header-title {
+.section-title {
+    text-transform: uppercase;
     font-size: 30px;
     color: #1f1f1f;
 }
 
-.section-header-link {
+.section-title_decorated span {
+    display: block;
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.section-title_decorated span::after {
+    content: '...';
+    color: var(--green);
+    font-size: 25px;
+    letter-spacing: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.section-link {
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 15px;
@@ -535,11 +572,8 @@ main {
     display: inline-block;
     position: absolute;
     top: 50%;
-    right: -30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 5px;
+    right: -31px;
+    padding: 10px;
     background-color: #f1cc7e;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -556,6 +590,73 @@ main {
 
 .card-body:hover .btn {
     display: flex;
+}
+
+.about {
+    color: #505050;
+    font-size: 15px;
+}
+
+.about p {
+    line-height: 1.222;
+}
+
+.about p:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.gallery {
+    margin: 0;
+}
+
+.gallery-link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 2.5px;
+    border-radius: 3px;
+    height: 200px;
+}
+
+.gallery-link::before{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 1;
+    opacity: 0;
+}
+
+.gallery-link::after {
+    content: '+';
+    font-size: 30px;
+    width: 72px;
+    height: 72px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+}
+
+.gallery-link:hover::after,
+.gallery-link:hover::after {
+    opacity: 1;
+}
+
+.gallery-link img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.section-text_lg {
+    font-size: 18px;
 }
 
 .footer {
@@ -771,7 +872,7 @@ main {
     .nav-menu-item::before {
         display: none;
     }
-    .goods .section-header-link {
+    .goods .section-link {
         margin-left: auto;
     }
     .selection-list-item a {
@@ -783,6 +884,15 @@ main {
     }
     .card-body .btn {
         display: flex;
+    }
+    .about-article {
+        margin-bottom: 35px;
+    }
+    .about-gallery .section-header {
+        margin-top: 25px;
+        text-align: center;
+        margin-bottom: 0;
+        order: 1;
     }
     .footer .nav-menu {
         margin-bottom: 60px;
@@ -808,6 +918,9 @@ main {
     }
     .slide .container {
         z-index: 2;
+    }
+    .slide_hit .slide-header-body p {
+        font-size: 45px;
     }
     .slide-header-body h2 {
         font-size: 45px;
@@ -835,13 +948,20 @@ main {
     .goods .section-header {
         text-align: center;
     }
-    .goods .section-header-title {
+    .goods .section-title {
         font-size: 25px;
         margin-right: 0;
         margin-bottom: 40px;
     }
-    .goods .section-header-link {
+    .goods .section-link {
         margin-left: 0;
+    }
+    .section-title_decorated {
+        text-align: center;
+    }
+    .section-title_decorated span::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -864,13 +984,13 @@ main {
 }
 
 @media (max-width: 400px) {
-    .card-body{
+    .card-body {
         padding-top: 30px;
         padding-left: 10px;
         padding-right: 10px;
         padding-bottom: 5px;
     }
-    .card-body-img{
+    .card-body-img {
         margin-bottom: 20px;
     }
     .card-body-img img {
@@ -892,7 +1012,7 @@ main {
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
     }
-    .card-body .btn{
+    .card-body .btn {
         margin-top: 15px;
     }
 }
