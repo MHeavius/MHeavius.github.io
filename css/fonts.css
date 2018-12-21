@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'OnePlusOne';
+    src: url('../fonts/OnePlusOne2015-Regular.eot');
+    src: url('../fonts/OnePlusOne2015-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OnePlusOne2015-Regular.woff2') format('woff2'),
+        url('../fonts/OnePlusOne2015-Regular.woff') format('woff'),
+        url('../fonts/OnePlusOne2015-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
