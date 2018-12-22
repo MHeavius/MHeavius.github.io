@@ -624,10 +624,10 @@ main {
     content: '';
     position: absolute;
     display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 2.5px;
+    left: 2.5px;
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
     background-color: rgba(0,0,0,.5);
     z-index: 1;
     opacity: 0;
@@ -636,15 +636,23 @@ main {
 .gallery-link::after {
     content: '+';
     font-size: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 72px;
     height: 72px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
     position: absolute;
     z-index: 2;
     opacity: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
 }
 
-.gallery-link:hover::after,
+.gallery-link:hover::before,
 .gallery-link:hover::after {
     opacity: 1;
 }
@@ -881,6 +889,10 @@ main {
     .selection-list-item a:hover {
         text-decoration: none;
         color: inherit;
+    }
+    .card-body:hover{
+        position: static;
+        box-shadow: none;
     }
     .card-body .btn {
         display: flex;
