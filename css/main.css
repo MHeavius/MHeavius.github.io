@@ -867,7 +867,8 @@ img.testimony-avatar {
 .testimony-hidden {
     display: none;
 }
-.testimony-hidden.open{
+
+.testimony-hidden.open {
     display: block;
 }
 
@@ -1039,6 +1040,118 @@ img.testimony-avatar {
     color: var(--green);
 }
 
+/* catalog */
+
+.crumbs {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    background-color: var(--green);
+    color: #ffffff;
+}
+
+.crumbs-title {
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.crumbs-list {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.crumbs-list-item:not(:last-of-type)::after {
+    content: '›';
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.catalog .selection {
+    padding-bottom: 65px;
+    margin-bottom: 1px solid #f0f0f0;
+}
+
+.catalog .selection-text {
+    font-size: 15px;
+    color: #090909;
+    line-height: 1.467;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.catalog .selection-list-item {
+    width: 33.3333%;
+}
+
+.catalog .selection-list-sublist {
+    width: 66.6666%;
+}
+
+.catalog .selection-sublist {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.catalog .selection-sublist .selection-list-item {
+    width: 50%;
+}
+
+.catalog .selection-list-item1 {
+    height: 500px;
+}
+
+.selection-menu {
+    height: 560px;
+    color: #ffffff;
+}
+
+.selection-menu h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+.selection-menu-item {
+    height: 100%;
+    padding-top: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    position: relative;
+    width: 25%;
+    background-repeat: no-repeat;
+    background-position-x: 35px;
+    background-position-y: 90%;
+}
+
+.selection-menu-item p {
+    font-size: 14px;
+    line-height: 1.286;
+}
+
+.selection-menu-item1 {
+    background-color: #be9f7c;
+    background-image: url(../img/selection-menu1.png);
+}
+
+.selection-menu-item2 {
+    background-color: #cbb09d;
+    background-image: url(../img/selection-menu2.png);
+}
+
+.selection-menu-item3 {
+    background-color: #876450;
+    background-image: url(../img/selection-menu3.png);
+}
+
+.selection-menu-item4 {
+    background-color: #7d9fc4;
+    background-image: url(../img/selection-menu4.png);
+}
+
 @media (max-width: 1199.98px) {
     .nav-menu-item:not(:last-of-type) {
         margin-right: 20px;
@@ -1073,6 +1186,10 @@ img.testimony-avatar {
     }
     .footer-subcolumn {
         margin-bottom: 35px;
+    }
+    .selection-menu-item {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
@@ -1182,10 +1299,8 @@ img.testimony-avatar {
     .header-collapse.open {
         transform: translateY(0);
     }
-
-    .nav-list{
-        z-index: 1
-        ;
+    .nav-list {
+        z-index: 1;
     }
     .nav-menu-item:not(:last-of-type) {
         margin-bottom: 10px;
@@ -1227,6 +1342,13 @@ img.testimony-avatar {
     }
     .footer .nav-menu-item::before {
         display: none;
+    }
+    .selection-menu {
+        height: auto;
+    }
+    .selection-menu-item {
+        height: 460px;
+        width: 50%;
     }
 }
 
@@ -1294,6 +1416,16 @@ img.testimony-avatar {
         left: 50%;
         transform: translateX(-50%);
     }
+    .catalog .selection-list-item1 {
+        height: 170px;
+        width: 100%;
+    }
+    .catalog .selection-list-sublist {
+        width: 100%;
+    }
+    .catalog .selection-list-sublist .selection-list-item {
+        width: 50%;
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -1312,13 +1444,20 @@ img.testimony-avatar {
     .footer-title span::after {
         display: none;
     }
+    .catalog .selection-list-sublist .selection-list-item {
+        width: 100%;
+    }
+    .selection-menu-item {
+        height: 300px;
+        width: 100%;
+    }
 }
 
 @media (max-width: 400px) {
-    .nav-list{
+    .nav-list {
         flex-direction: column;
     }
-    .nav-list-item:not(:last-of-type){
+    .nav-list-item:not(:last-of-type) {
         margin-right: 0;
         padding-bottom: 10px;
         margin-bottom: 10px;
