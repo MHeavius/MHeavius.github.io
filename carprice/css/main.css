@@ -222,6 +222,8 @@ ol {
 }
 
 .how-list-item span {
+    display: block;
+    margin-top: 10px;
     padding-right: 56px;
     text-align: right;
 }
@@ -230,7 +232,9 @@ ol {
     content: counter(list);
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 0;
+    font-size: 20px;
+    font-weight: 600;
     line-height: 46px;
     text-align: center;
     width: 46px;
@@ -238,7 +242,19 @@ ol {
     border-radius: 50%;
     background-color: #389244;
     color: #ffffff;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.how-list-item:not(:last-of-type)::after{
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 100%;
+    width: 2px;
+    transform: translateX(-50%);
+    background-color: #000;
 }
 
 .how-list-item:nth-of-type(even) {
@@ -252,7 +268,7 @@ ol {
 }
 
 .how-list-item:not(:last-of-type) {
-    margin-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 .how-list-item span {
