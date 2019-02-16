@@ -231,7 +231,7 @@ ol {
     content: counter(list);
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: calc(50% - 20px);
     font-size: 20px;
     font-weight: 600;
     line-height: 46px;
@@ -245,12 +245,16 @@ ol {
     z-index: 2;
 }
 
+.how-list-item:last-of-type::before{
+    top: 50%;
+}
+
 .how-list-item:not(:last-of-type)::after{
     content: '';
     position: absolute;
-    top: 20%;
+    top: 0;
     left: 50%;
-    height: calc(100% + 40px);
+    height: 100%;
     width: 2px;
     transform: translateX(-50%);
     background-color: #000;
@@ -267,7 +271,7 @@ ol {
 }
 
 .how-list-item:not(:last-of-type) {
-    margin-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 .how-list-item span {
