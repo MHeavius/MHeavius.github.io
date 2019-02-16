@@ -147,7 +147,8 @@ ol {
 
 .about {
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 20px;
+    background-color: #F2F2F3;
 }
 
 .about-title {
@@ -156,4 +157,45 @@ ol {
     font-family: 'Ubuntu';
     line-height: 1.3;
     font-weight: 400;
+}
+
+.about-list {
+    font-size: 20px;
+    font-family: 'Ubuntu';
+    line-height: 1.55;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.about-list-item:not(:last-of-type) {
+    margin-bottom: 25px;
+}
+
+.about-list-item span {
+    display: block;
+    text-align: right;
+    line-height: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 80px;
+    font-weight: 800;
+    color: rgb(222, 222, 222);
+}
+
+.appraisal{
+    background-image: url(../img/section_appraisal-bg.jpg);
+}
+
+.ad{
+    padding-top: 80px;
+    padding-bottom: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.ad-title{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    margin-bottom: 50px;
 }
