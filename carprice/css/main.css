@@ -1,5 +1,5 @@
 :root {
-    --primary: #389244;
+    --primary: #004d7f;
 }
 
 body {
@@ -327,35 +327,91 @@ ol {
     padding-bottom: 30px;
 }
 
-.interest-list-item::before{
+.interest-list-item::before {
     display: block;
     height: 100px;
     width: 100px;
     margin-bottom: 30px;
 }
 
-.interest-list-item_1::before{
+.interest-list-item_1::before {
     content: url(../img/interest-list-item_1.png)
 }
-.interest-list-item_2::before{
+
+.interest-list-item_2::before {
     content: url(../img/interest-list-item_2.png)
 }
-.interest-list-item_3::before{
+
+.interest-list-item_3::before {
     content: url(../img/interest-list-item_3.png)
 }
-.interest-list-item_4::before{
+
+.interest-list-item_4::before {
     content: url(../img/interest-list-item_4.png)
 }
-.interest-list-item_5::before{
+
+.interest-list-item_5::before {
     content: url(../img/interest-list-item_5.png)
 }
-.interest-list-item_6::before{
+
+.interest-list-item_6::before {
     content: url(../img/interest-list-item_6.png)
 }
-.interest-list-item_7::before{
+
+.interest-list-item_7::before {
     content: url(../img/interest-list-item_7.png)
 }
 
-.guarantee{
+.interest-list-item_8::before {
+    content: url(../img/interest-list-item_8.png)
+}
+
+.guarantee {
     background-image: url(../img/section_guarantee-bg.jpg);
+}
+
+.area .section-title {
+    margin-bottom: 30px;
+}
+
+.section-subtitle {
+    margin-bottom: 120px;
+    font-size: 26px;
+    line-height: 1.15;
+    font-weight: 400;
+    text-align: center;
+}
+
+.area {
+    padding-top: 60px;
+    padding-bottom: 15px;
+}
+
+.locations {
+    padding-bottom: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-image: url(../img/mother.png);
+}
+
+.locations-title {
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 90px;
+}
+
+.locations-title span {
+    color: var(--primary);
+}
+
+.locations-list-item {
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.tender{
+    background-image: url(../img/section_tender-bg.jpg);
 }
