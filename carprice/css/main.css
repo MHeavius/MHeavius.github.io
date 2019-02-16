@@ -182,20 +182,80 @@ ol {
     color: rgb(222, 222, 222);
 }
 
-.appraisal{
+.appraisal {
     background-image: url(../img/section_appraisal-bg.jpg);
 }
 
-.ad{
+.ad {
     padding-top: 80px;
     padding-bottom: 30px;
     color: #fff;
     text-align: center;
 }
 
-.ad-title{
+.ad-title {
     font-size: 32px;
     font-weight: 700;
     line-height: 48px;
     margin-bottom: 50px;
+}
+
+.how{
+    padding-top: 70px;
+}
+
+.section-title{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 90px;
+}
+
+.how-list{
+    counter-reset: list;
+    margin-bottom: 100px;
+}
+
+.how-list-item {
+    display: flex;
+    position: relative;
+    counter-increment: list;
+}
+
+.how-list-item span {
+    padding-right: 56px;
+    text-align: right;
+}
+
+.how-list-item::before {
+    content: counter(list);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    line-height: 46px;
+    text-align: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #389244;
+    color: #ffffff;
+    transform: translate(-50%, -50%);
+}
+
+.how-list-item:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.how-list-item:nth-of-type(even) span {
+    padding-right: 0;
+    padding-left: 56px;
+    text-align: left;
+}
+
+.how-list-item:not(:last-of-type) {
+    margin-bottom: 40px;
+}
+
+.how-list-item span {
+    display: block;
+    width: 50%;
 }
