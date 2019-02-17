@@ -234,7 +234,7 @@
                             <label class="form-label">
                                 <span class="form-label-title">Размер автопарка</span>
                                 <div class="form-select_wrapper">
-                                    <select name="Размер автопарка" required>
+                                    <select name="Размер автопарка" data-required>
                                         <option value disabled selected>Не выбрано</option>
                                         <option value="1-5">1-5</option>
                                         <option value="5-50">5-50</option>
@@ -247,27 +247,27 @@
                             </label>
                             <label class="form-label">
                                 <span class="form-label-title">Название компании</span>
-                                <input type="text" required name="Название компании">
+                                <input type="text" data-required name="Название компании">
                             </label>
                             <label class="form-label">
                                 <span class="form-label-title">Город</span>
-                                <input type="text" required name="Город">
+                                <input type="text" data-required name="Город">
                             </label>
                             <label class="form-label">
                                 <span class="form-label-title">Контактное лицо</span>
-                                <input type="text" required name="Контактное лицо">
+                                <input type="text" data-required name="Контактное лицо">
                             </label>
                             <label class="form-label">
                                 <span class="form-label-title">Телефон</span>
-                                <input type="tel" pattern="[0-9]*" required name="Телефон">
+                                <input type="tel" pattern="[0-9]*" data-required name="Телефон">
                             </label>
                             <label class="form-label">
                                 <span class="form-label-title">Электронная почта</span>
-                                <input type="email" required name="Электронная почта">
+                                <input type="email" data-required name="Электронная почта">
                             </label>
                             <label class="form-label">
                                 <span class="form-label-title">Должность</span>
-                                <input type="text" required name="Должность">
+                                <input type="text" data-required name="Должность">
                             </label>
                             <div class="form-btn_wrapper">
                                 <button class="form-btn" type="submit">Заказать</button>
@@ -313,5 +313,6 @@
             </div>
         </div>
     </footer>
+    <script src="./js/main.js"></script>
 </body>
 </html>

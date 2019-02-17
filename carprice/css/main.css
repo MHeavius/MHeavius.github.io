@@ -488,6 +488,24 @@ select {
     outline: 0;
 }
 
+.form-label input.error,
+.form-label select.error {
+    border: 1px solid rgb(255, 0, 0);
+}
+
+.alert {
+    color: rgb(255, 0, 0);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.success {
+    text-align: center;
+    background: #62C584;
+    color: #fff;
+    padding: 20px;
+}
+
 .form-select_wrapper {
     position: relative;
 }
@@ -566,6 +584,10 @@ select {
 .footer-link {
     display: block;
     width: 35px;
+}
+
+.footer-link:hover{
+    opacity: .9;
 }
 
 .footer-social-item {
@@ -716,28 +738,28 @@ select {
     .section-subtitle {
         margin-bottom: 40px;
     }
-    .locations{
+    .locations {
         padding-bottom: 40px;
     }
-    .locations-title{
+    .locations-title {
         line-height: 1.2;
         text-align: center;
     }
-    .locations-list-item{
+    .locations-list-item {
         font-size: 18px;
         line-height: 1.5;
     }
-    .reviews-item-quote{
+    .reviews-item-quote {
         padding-top: 16px;
         padding-bottom: 16px;
         padding-left: 12px;
         padding-right: 12px;
         line-height: 1.4;
     }
-    .order{
+    .order {
         padding-bottom: 40px;
     }
-    .order .section-title{
+    .order .section-title {
         font-size: 30px;
     }
     .footer-bottom-list {
