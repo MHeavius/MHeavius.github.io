@@ -11,14 +11,17 @@ window.addEventListener('load', function(){
                 this.validation(event);
             });
 
-            this.requiredInputs.forEach(input => {
-                input.addEventListener('change', () => {
-                    this.inputStatus(input);
-                });
-            })
+            // this.requiredInputs.forEach(input => {
+            //     input.addEventListener('input', () => {
+            //         this.inputStatus(input);
+            //     });
+            // })
         }
 
         validation = function (event) {
+            this.errorInvalidData = 0;
+            this.errorInvalidTel = 0;
+            this.errorInvalidEmail = 0;
             var checkedInputs = 0;
             this.requiredInputs.forEach(input => {
                 var res = this.inputStatus(input);
@@ -26,6 +29,32 @@ window.addEventListener('load', function(){
             });
             if (checkedInputs < this.requiredInputs.length){
                 event.preventDefault();
+                var existingErrorBox = this.self.querySelector('.alert-box');
+                if (existingErrorBox != undefined){
+                    existingErrorBox.parentElement.removeChild(existingErrorBox);
+                    console.log(existingErrorBox);
+                }
+                var errorBox = document.createElement('div');
+                errorBox.classList.add('alert-box');
+                this.wrapper.appendChild(errorBox);
+                if (this.errorInvalidData == 1){
+                    var message = document.createElement('div');
+                    message.classList.add('alert-box-item');
+                    message.innerHTML = "Пожалуйста, заполните все обязательные поля";
+                    errorBox.appendChild(message);
+                } 
+                if (this.errorInvalidTel == 1){
+                    var message = document.createElement('div');
+                    message.classList.add('alert-box-item');
+                    message.innerHTML = "Укажите, пожалуйста, корректный номер телефона";
+                    errorBox.appendChild(message);
+                }
+                if (this.errorInvalidEmail == 1){
+                    var message = document.createElement('div');
+                    message.classList.add('alert-box-item');
+                    message.innerHTML = "Укажите, пожалуйста, корректный email";
+                    errorBox.appendChild(message);
+                }
             } else {
                 var successMessage = document.createElement('div');
                 successMessage.classList.add('success');
@@ -60,10 +89,13 @@ window.addEventListener('load', function(){
                 input.classList.add('error');
                 if (validity == false){
                     errorMessage.innerText = "Пожалуйста, заполните все обязательные поля";
+                    this.errorInvalidData = 1;
                 } else if (validity == 'invalidNumber'){
                     errorMessage.innerText = "Укажите, пожалуйста, корректный номер телефона";
+                    this.errorInvalidTel = 1;
                 } else if (validity == 'invalidEmail'){
                     errorMessage.innerText = "Укажите, пожалуйста, корректный email";
+                    this.errorInvalidEmail = 1;
                 }
                 input.parentElement.appendChild(errorMessage);
                 return 0;
